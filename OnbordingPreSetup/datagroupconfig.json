@@ -1,0 +1,21 @@
+{
+   "PlatformCacheConfig": {
+    "ConnectionString": "redis:6379,allowAdmin=True"
+  },
+  "SearchProvider": {
+    "DataSource": {
+      "Type": "ElasticSearch",
+      "Configuration": {
+        "ServiceUrl": "http://localhost:9200/",
+        "SuperAdmin": {
+          "UserName": "elastic",
+          "Password": "***"
+        },
+        "ReadonlyUser": {
+          "UserName": "elastic",
+          "Password": "***"
+        }
+      }
+    }
+  }
+}

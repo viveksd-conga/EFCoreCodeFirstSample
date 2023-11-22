@@ -1,0 +1,39 @@
+{
+	"BasicInformation": {
+		"CustomerId": "c-10001",
+		"CustomerDisplayName": "rls-platdev-org3",
+		"PrimaryRegion": "us-west-2",
+		"customerName": "rls-platdev-org3"
+	},
+	"AuthenticationInformation": {
+		"CustomerAdminUser": {
+			"FirstName": "adminFirst",
+			"LastName": "adminlast",
+			"UserExternalId": "USER1234X3",
+			"Email": "abx@xya.com"
+		},
+		"ExternalIntegrationIdentifier": {
+			"ExternalId": "ABCDEFGHI145678",
+			"Type": "QA",
+			"Description": "Salesforce QA org having id ABCDEFGHI123456789 "
+		},
+		"IsAutoProvisionUserEnabled": false,
+		"UseCongaIDP": false
+	},
+	"OptionalInformation": {
+		"platformSchemaPackageVersion": "2023.11.0.58",
+		"OrganizationDemographics": {
+			"Currency": "USD",
+			"TimezoneId": "UTC",
+			"LocaleName": "en-US",
+			"PhoneNumber": "1234",
+			"Address": "India"
+		}
+	},
+	"customerEnvironmentType": "DEV",
+	"createDedicatedStorage": false,
+	"EnvironmentId": "",
+	"Region": "usw2",
+	"DataCenter": "dl1",
+	"Continent": ""
+}

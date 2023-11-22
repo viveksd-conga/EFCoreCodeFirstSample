@@ -1,0 +1,9 @@
+{
+	"PrimaryRegion": "us-west-2",
+	"sharedPartitionName": "shared-partition-plat-dev",
+	"platformSchemaPackageVersion": "2023.11.0.58",
+	"EnvironmentId": "",
+	"Region": "usw2",
+	"DataCenter": "dl1",
+	"Continent": ""
+}

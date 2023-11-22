@@ -1,0 +1,6 @@
+{
+  "SchemaPackageVersion": "2023.11.0.58",
+  "CustomerObjectDbThresholdCount": "10",
+  "NoReplyEmail": "noreply@congacloud.com",
+  "OperationsEmailIds": "<user-email-id>@conga.com"
+}

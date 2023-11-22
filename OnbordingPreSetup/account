@@ -1,0 +1,5 @@
+{
+"AccountId":"000000000000",
+"UniqueIdentifierForReplication":"arn:aws:iam::000000000000:role/s3_replication_role",
+"Cloud":"AWS"
+}

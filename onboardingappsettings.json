@@ -1,0 +1,354 @@
+{
+  "DefaultCustomerStorage": "conga-customer-storage-local",
+  "LoggerOptions": {
+    "LogType": "Console",
+    "LogLevel": "Information",
+    "LogEnable": "True",
+    "LogLevelCategoryOptions": {
+      "Microsoft.AspNetCore.Server.Kestrel": "Error",
+      "Microsoft.AspNetCore.Mvc": "Warning",
+      "Microsoft.Extensions.Hosting": "Warning",
+      "Microsoft.AspNetCore.DataProtection": "Warning",
+      "Microsoft.Hosting.Lifetime": "Warning",
+      "Microsoft.AspNetCore.Hosting.Diagnostics": "Warning",
+      "Microsoft.AspNetCore.HostFiltering": "Warning",
+      "Microsoft.AspNetCore.Routing.Matching.DfaMatcher": "Warning",
+      "Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware": "Warning",
+      "Microsoft.EntityFrameworkCore.Database.Command": "Warning"
+    }
+  },
+  "CustomerGlobalStorageProvider": "AWSS3",
+  "CustomerGlobalStorage.AWSS3": {
+    "BucketName": "conga-rcc-tenantinfo",
+    "AccessKey": "test",
+    "SecretAccessKey": "test",
+    "ServiceURL": "http://s3.localhost.localstack.cloud:4566"
+  },
+  "SecretManagmentConfigurationProvider": "AWSSSM",
+  "SecretManagmentConfiguration.AWSSSM": {
+    "RootAccessKey": "test",
+    "RootSecretAccessKey": "test",
+    "ServiceURL": "http://ssm.localhost.localstack.cloud:4566"
+  },
+  "CustomerSchemaPackageProvider": "Jfrog",
+  "CustomerSchemaPackageProvider.Local": "",
+  "CustomerSchemaPackageProvider.Jfrog": {
+    "ExportURL": "https://art01.apttuscloud.io/artifactory/conga-roc-schema-packages/",
+    "APIKey": ""
+  },
+  "OTEL_AGENT_HOST": "jaeger",
+  "CustomerSchemaPackageProvider.AWSS3": {
+    "BucketName": "conga-platform-schema-package",
+    "AccessKey": "test",
+    "SecretAccessKey": "test",
+    "ServiceURL": "http://s3.localhost.localstack.cloud:4566"
+  },
+  "SchemaPackageName": "Conga_Platform_PristineSchema",
+  "DataPackageName": "PristineData",
+  "AuthMessageProvider": {
+    "ProviderType": "AWS",
+    "Credentials": {
+      "AccessKey": "test",
+      "SecretKey": "test"
+    },
+    "Endpoints": {
+      "TopicEndpoint": "http://sns.localhost.localstack.cloud:4566",
+      "QueueEndpoint": "http://sqs.localhost.localstack.cloud:4566"
+    },
+    "Queues": {
+      "AuthProviderUserChangeInputQueue": "user-change-queue",
+      "AuthProviderOrgChangeInputQueue": "organization-change-queue",
+      "AuthOnboardResponseQueue": "auth-onboard-response-queue",
+      "AuthOnboardUMResponseQueue": "auth-onboard-um-response-queue",
+      "AuthOnboardUMOrgResponseQueue": "auth-onboard-um-org-response-queue",
+      "AuthAutoProvisionUserQueue": "auth-autoprovision-user-queue"
+    },
+    "Topics": {
+      "AuthProviderUserOrgInputTopic": "user-organization-change-topic"
+    }
+  },
+  "CustomerManagementMessageProvider": {
+    "ProviderType": "AWS",
+    "Credentials": {
+      "AccessKey": "test",
+      "SecretKey": "test"
+    },
+    "Endpoints": {
+      "TopicEndpoint": "http://sns.localhost.localstack.cloud:4566",
+      "QueueEndpoint": "http://sqs.localhost.localstack.cloud:4566"
+    },
+    "Queues": {
+      "CustomerOnboardingInputQueue": "customer-onboard-queue",
+      "SharedPartitionInputQueue": "shared-partition-queue",
+      "CoreAppsOnboardingInputQueue": "coreapps-onboard-queue",
+      "CustomerUpgradeInputQueue": "customer-upgrade-queue",
+      "RevenueOnboardingInputQueue": "revenue-onboard-queue",
+      "PlatformSearchOnboardInputQueue": "platformsearch-onboard-queue",
+      "CustomerOffboardingInputQueue": "customer-offboard-queue",
+      "ComponentOffboardResponseQueue": "component-offboard-response-queue",
+      "ComponentOnboardResponseQueue": "component-onboard-response-queue",
+      "RevenueOnboardResponseQueue": "revenue-onboard-response-queue",
+      "RevenueOffboardingInputQueue": "revenue-offboard-queue",
+      "PlatformSearchOffboardInputQueue": "platformsearch-offboard-queue",
+      "UserManagementOffboardInputQueue": "usermanagement-offboard-queue",
+      "PlatformAzureStorageOnboardInputQueue": "platform-azure-storage-onboard-queue",
+      "OffboardInputQueue": "offboard-queue",
+      "CustomerManagemenetAgentInputQueue": "customer-agent-queue",
+      "OrchestratorInputQueue": "orchestrator-input-queue",
+      "OrchestratorResponseQueue": "orchestrator-response-queue",
+      "LicenseAgentInputQueue": "license-agent-input-queue"
+    },
+    "Topics": {
+      "CustomerUpgradeInstructionTopic": "customer-upgrade-topic",
+      "CustomerOnboardInstructionTopic": "customer-onboard-topic",
+      "SharedPartitionInstructionTopic": "shared-partition-topic",
+      "RevenueOnboardingInstructionTopic": "revenue-onboard-topic",
+      "CoreAppsOnboardInstructionTopic": "coreapps-onboard-topic",
+      "RevenueOnboardResponseTopic": "revenue-onboard-response-topic",
+      "CustomerOffboardInstructionTopic": "customer-offboard-topic",
+      "ComponentOffboardInstructionTopic": "component-offboard-topic",
+      "ComponentOnboardInstructionTopic": "component-onboard-topic",
+      "ComponentOffboardResponseTopic": "component-offboard-response-topic",
+      "ComponentOnboardResponseTopic": "component-onboard-response-topic",
+      "PlatformSearchOnboardInstructionTopic": "platformsearch-onboard-topic",
+      "OrchestratorResponseTopic": "orchestrator-response-topic",
+      "OrchestratorInstructionTopic": "orchestrator-instruction-topic",
+      "ComponentExplictInstructionTopic": "component-explict-topic",
+      "CustomerManagemenetAgentInstructionTopic": "customer-management-agent-topic",
+      "ComponentImplicitInstructionTopic": "component-implicit-topic",
+      "LicenseOrchestratorInstructionTopic": "license-orchestrator-topic"
+    }
+  },
+  "AllowedHosts": "*",
+  "IsProfilerEnabled": true,
+  "ReIndexBatchSize": 100,
+  "EnableDataChangeNotifications": false,
+  "EnableMetadataChangeNotifications": false,
+  "EnableConfigurationChangeNotifications": false,
+  "EnableOptimisticLocking": true,
+  "PlatformCacheConfig": {
+    "ConnectionString": "redis:6379,allowAdmin=True"
+  },
+  "DataCacheConfig": {
+    "ConnectionString": "redis:6379,allowAdmin=True"
+  },
+  "ApplicationCacheConfig": {
+    "ConnectionString": "redis:6379,allowAdmin=True"
+  },
+  "PubSubConfig": {
+    "StreamName": "data-change-notifications-stream-rls02-psg1",
+    "ConsumerGroupName": "data-change-stream-platform-consumer-group-rls02-psg1",
+    "PendingMessagesConsumerName": "pending-messages-consumer-rls02-psg1",
+    "ConnectionString": "redis:6379,allowAdmin=True",
+    "Enabled": false,
+    "BatchSize": 100,
+    "WaitDurationForRetryInMilliSeconds": 10000,
+    "MaximumIdleTimeToDeleteConsumer": 86400000,
+    "MaximumDeliveryCount": 5,
+    "DataChangeBatchPublishSize": 1000,
+    "DataChangeBatchUpdatePublishSize": 1000
+  },
+  "SecureStoreConfig": {
+    "ProviderType": "AWS",
+    "AccessKey": "test",
+    "SecretAccessKey": "test",
+    "ServiceURL": "http://ssm.localhost.localstack.cloud:4566"
+  },
+  "DataConfigStorageConfigProvider": "AWS",
+  "DataConfigStorageConfig.AWS": {
+    "AccessKey": "test",
+    "SecretAccessKey": "test",
+    "ServiceURL": "http://ssm.localhost.localstack.cloud:4566"
+  },
+  "DataConfig": {
+    "DataStorageProvider": {
+      "ProviderType": "AWSS3Blob",
+      "AccessKey": "test",
+      "SecretKey": "test",
+      "ServiceURL": "http://s3.localhost.localstack.cloud:4566"
+    }
+  },
+  "CDNStoreDataConfig": {
+    "CDNDataStorageProvider": {
+      "ProviderType": "AWSS3Blob",
+      "AccessKey": "TO_BE_OVERRIDDEN_SITE_SPECIFIC",
+      "SecretKey": "TO_BE_OVERRIDDEN_SITE_SPECIFIC",
+      "ServiceURL": "TO_BE_OVERRIDDEN_SITE_SPECIFIC",
+      "GlobalCDNStore": "TO_BE_OVERRIDDEN_SITE_SPECIFIC"
+    }
+  },
+  "MessageProvider": {
+    "ProviderType": "AWS",
+    "Credentials": {
+      "AccessKey": "test",
+      "SecretKey": "test"
+    },
+    "Endpoints": {
+      "TopicEndpoint": "http://sns.localhost.localstack.cloud:4566",
+      "QueueEndpoint": "http://sqs.localhost.localstack.cloud:4566"
+    },
+    "Queues": {
+    },
+    "Topics": {
+      "DataChangeAuditLogTopic": "data-change-topic",
+      "UpdateMessageTopic": "update-message-topic",
+      "MetadataChangeTopic": "metadata-change-topic",
+      "DataChangeCustomCodeTopic": "data-change-custom-code-topic",
+      "RollupFieldValueComputeTopic": "rollup-field-value-compute-topic",
+      "EmailSenderTopic": "email-sender-topic",
+      "ReIndexerTopic": "reindexer-topic",
+      "ReIndexerOnDemandTopic": "reindexer-ondemand-topic",
+      "IndexRestoreScannerTopic": "index-restore-scanner-topic",
+      "IndexRestoreBuilderTopic": "index-restore-builder-topic",
+      "IndexRestorePrefixComputeTopic": "index-restore-prefix-compute-topic",
+      "JobTopic": "job-topic",
+      "BatchTopic": "batch-topic",
+      "ConfigurationChangeAuditLogTopic": "configuration-change-topic",
+      "ResponseConsolidationTopic": "response-consolidation-topic",
+      "SearchSettingChangeDataSyncTopic": "search-settingchange-sync-topic",
+      "TranslationDataChangeTopic": "translation-datachange-topic",
+      "SearchDocumentIndexDataSyncTopic": "search-document-index-datasync-topic",
+      "ForwardSyncTopic": "forward-sync-topic",
+      "CustomCodeDeploymentTopic": "customcode-deployment-topic",
+      "WorkflowRunnerTopic": "workflow-runner-topic",
+      "MetadataChangeAliasDependencyUpdateTopic": "metadata-change-alias-dependency-update-topic",
+      "DataChangeAliasDependencyUpdateTopic": "data-change-alias-dependency-update-topic",
+      "CustomerTelemetryTopic": "customer-telemetry-topic",
+      "ReverseSyncBatchMessageTopic": "reverse-sync-batch-message-topic",
+      "BulkUserCreateTopic": "bulk-user-create-topic",
+      "ActionPermissionChangeAuditLogTopic": "actionpermission-change-topic",
+      "IndexEventStoreTopic": "index-eventstore-topic",
+      "SchedulerEventTopic": "scheduler-event-topic",
+      "DocumentSyncTopic": "document-sync-topic",
+      "CustomSyncTopic": "custom-sync-topic",
+      "PostOnboardUpgradeTopic": "post-onboard-upgrade-topic",
+      "ImageSyncTopic": "image-sync-topic",
+      "EmailInboundProcessorTopic": "inbound-email-processor-topic",
+      "OrchestratorInstructionTopic ": "orchestrator-instruction-topic"
+    }
+  },
+  "SearchProvider": {
+    "NoOfShards": 1,
+    "NoOfReplicas": 2,
+    "DataSource": {
+      "Type": "ElasticSearch",
+      "EnableHttpCompression": false,
+      "Configuration": {
+        "ServiceUrl": "TO_BE_OVERRIDDEN_DATALAYER_SPECIFIC",
+        "SuperAdmin": {
+          "UserName": "TO_BE_OVERRIDDEN_DATALAYER_SPECIFIC"
+        },
+        "ReadonlyUser": {
+          "UserName": "TO_BE_OVERRIDDEN_DATALAYER_SPECIFIC"
+        }
+      }
+    }
+  },
+  "EmailServiceConfig": {
+    "ProviderType": "AWSSESSMTP",
+    "SmtpConfig": {
+      "Host": "email-smtp.us-west-2.amazonaws.com",
+      "Port": 587,
+      "Headers": {}
+    }
+  },
+  "EmailTemplateEngineConfig": {
+    "TemplateEngineType": "HandleBar"
+  },
+  "DataSource": {
+    "Type": "ElasticSearch",
+    "EnableHttpCompression": false,
+    "Configuration": {
+      "ServiceUrl": "http://opensearch-cluster.us-east-1.opensearch.localhost.localstack.cloud:4566",
+      "SuperAdmin": {
+        "UserName": "admin",
+        "Password": "admin"
+      },
+      "ReadonlyUser": {
+        "UserName": "admin",
+        "Password": "admin"
+      }
+    }
+  },
+  "SupportedCloudType": "AWS",
+  "JwtBearerOptions": {
+    "Authority": "https://login.microsoftonline.com/0c026248-878f-4dc7-85fb-45b538b3615a/v2.0",
+    "MetadataAddress": "https://login.microsoftonline.com/0c026248-878f-4dc7-85fb-45b538b3615a/v2.0/.well-known/openid-configuration",
+    "TokenValidationParameters": {
+      "ValidateAudience": true,
+      "ValidateIssuer": true,
+      "ValidAudience": "d70a3ef9-66a3-431d-865a-c085ed724a58",
+      "ValidApplicationObjectId": "e4b6c170-e8d8-42c6-bd17-a1084c9498c0"
+    }
+  },
+  "Authentication": {
+    "TokenUrl": "TO_BE_OVERRIDDEN",
+    "ClientId": "TO_BE_OVERRIDDEN",
+    "ClientSecret": "TO_BE_OVERRIDDEN"
+  },
+  "CongaIDPProvider": "AzureB2C",
+  "AzureB2C": {
+    "TenantId": "0c026248-1234-4dc7-85fb-45b538b3615a",
+    "AppId": "6539ed05-1234-46c3-9f89-3f9896c63e47",
+    "ClientSecret": "q_E8Q~1234._-glo1iSNRo~btBNHGgBnDHcjX",
+    "IdentityIssuer": "congaplatauthservice.onmicrosoft.com",
+    "B2CExtensionAppId": "c12348512cda455eb31abf2427e251e8",
+    "Scopes": [
+      "https://graph.microsoft.com/.default"
+    ],
+    "DefaultPassword": "CONGA_IDP_DEFAULT_PASSWORD"
+  },
+  "LockRetryOptions": {
+    "MinRetryDelay": 100,
+    "MaxRetryDelay": 600
+  },
+  "BulkAsyncJobOptions": {
+    "SubBatchDataSize": 1000,
+    "ProcessRecordCount": 1000
+  },
+  "HealthCheckConfig": {
+    "TopicResponseCacheTTLInSeconds": 3600,
+    "CacheOrganizationKey": "healthcheck"
+  },
+  "SchedulerConfig": {
+    "ProviderType": "AWS",
+    "AccessKey": "TO_BE_OVERRIDDEN_SITE_SPECIFIC",
+    "SecretKey": "TO_BE_OVERRIDDEN_SITE_SPECIFIC",
+    "ServiceURL": "TO_BE_OVERRIDDEN_SITE_SPECIFIC",
+    "RoleName": "Amazon_EventBridge_Scheduler_SNS"
+  },
+  "AliasConfig": {
+    "NumberOfAliasFieldsRecordsToBePublished": 1000
+  },
+  "GlobalStoreConfig": {
+    "ProviderType": "AWSS3Blob",
+    "AccessKey": "test",
+    "SecretKey": "test",
+    "ServiceURL": "http://s3.localhost.localstack.cloud:4566",
+    "ContainerName": "conga-rcc-tenantinfo"
+  },
+  "SmtpConfig": {
+    "Host": "smtp.sendgrid.net",
+    "Username": "apikey",
+    "Password": "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",
+    "Port": 587
+  },
+  "EmailNotificationConfig": {
+    "FromEmail": "noreply@congacloud.com"
+  },
+  "LicenseStorageProvider": "AWSS3",
+  "LicenseStorage.AWSS3": {
+    "BucketName": "conga-rcc-tenantinfo",
+    "AccessKey": "test",
+    "SecretAccessKey": "test",
+    "ServiceURL": "http://s3.localhost.localstack.cloud:4566"
+  },
+  "CustomerManagementConnectionConfiguration": {
+    "CustomerManagementEndpoint": "CUSTOMER_MANAGEMENT_SSG_URL",
+    "tokenUrl": "CUSTOMER_MANAGEMENT_SSG_TOKEN_URL",
+    "client_id": "CUSTOMER_MANAGEMENT_JWT_BEARER_AUDIENCE_AZUREAD",
+    "client_secret": "CUSTOMER_MANAGEMENT_TOKEN_CLIENT_SECRET",
+    "grant_type": "client_credentials",
+    "scope": ".default"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "Id": "789d1bdd-91c0-4dfa-b0ac-13abb9a4b918",
+  "Name": "Onboarding Welcome User Email",
+  "TemplateType": "html",
+  "Description": "Onboarding Welcome User Email",
+  "Subject": "Organization {{OrganizationName}} onboarded successfully",
+  "HtmlValue": "<p>Hello {{UserName}},</p>\n<p>The Organization {{OrganizationName}} is onboarded successfully.</p>\n<p>Your Organization friendly Id is {{OrgFriendlyId}}.</p>\n\n<p>Thanks,</p>\n<p>Conga</p>",
+  "Body": "<p>Hello {{UserName}},</p>\n<p>The Organization {{OrganizationName}} is onboarded successfully.</p>\n<p>Your Organization friendly Id is {{OrgFriendlyId}}.</p>\n\n<p>Thanks,</p>\n<p>Conga</p>",
+  "IsActive": true,
+  "EmailTemplateCategory": {
+    "Id": "690dfb89-1ffd-4243-a31e-2cb19b860306",
+    "Name": "PublicEmailTemplates"
+  },
+  "OwnerId": "11111111-1111-1111-1111-111111111111",
+  "AccessType": "public",
+  "CreatedBy": {
+    "Id": "11111111-1111-1111-1111-111111111111",
+    "Name": "System Admin"
+  },
+  "CreatedDate": "2023-05-23T05:25:37.604Z",
+  "ModifiedBy": {
+    "Id": "11111111-1111-1111-1111-111111111111",
+    "Name": "System Admin"
+  },
+  "ModifiedDate": "2023-05-23T05:25:37.604Z",
+  "ExternalId": null,
+  "IsDeleted": false
+}

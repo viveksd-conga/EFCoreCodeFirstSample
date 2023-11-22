@@ -1,0 +1,28 @@
+{
+  "Id": "789d1bdd-91c0-4dfa-b0ac-13abb9a4b918",
+  "Name": "Onboarding Failed Before Auth Email",
+  "TemplateType": "html",
+  "Description": "Onboarding Failed Before Auth Email",
+  "Subject": "Basic Onboarding failed for customer {{CustomerName}}!",
+  "HtmlValue": "<p>Hello Team, </p>\n<p>Onboarding failed for customer {{CustomerName}} with TrackingId {{OnboardingRequestTrackingId}}.</p>\n<p>Reason: {{ErrorMessage}} \n{{StackTrace}}</p>\n\n<p>Thanks,</p>\n<p>Conga</p>",
+  "Body": "<p>Hello Team, </p>\n<p>Onboarding failed for customer {{CustomerName}} with TrackingId {{OnboardingRequestTrackingId}}.</p>\n<p>Reason: {{ErrorMessage}} \n{{StackTrace}}</p>\n\n<p>Thanks,</p>\n<p>Conga</p>",
+  "IsActive": true,
+  "EmailTemplateCategory": {
+    "Id": "690dfb89-1ffd-4243-a31e-2cb19b860306",
+    "Name": "PublicEmailTemplates"
+  },
+  "OwnerId": "11111111-1111-1111-1111-111111111111",
+  "AccessType": "public",
+  "CreatedBy": {
+    "Id": "11111111-1111-1111-1111-111111111111",
+    "Name": "System Admin"
+  },
+  "CreatedDate": "2023-05-23T05:25:37.604Z",
+  "ModifiedBy": {
+    "Id": "11111111-1111-1111-1111-111111111111",
+    "Name": "System Admin"
+  },
+  "ModifiedDate": "2023-05-23T05:25:37.604Z",
+  "ExternalId": null,
+  "IsDeleted": false
+}

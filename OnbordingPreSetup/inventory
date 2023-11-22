@@ -1,0 +1,19 @@
+{
+    "InfraId": "usw2_dl1",
+    "PrimaryRegion": "us-west-2",
+    "SecondaryRegion": "us-east-1",
+	"DefaultCustomerStoragePrefix": "customer-object-db",
+    "PrimaryDefaultCustomerStorage": "conga-customer-storage-local",
+    "SecondaryDefaultCustomerStorage": "conga-customer-storage-local",
+    "AccountId": "000000000000",
+    "Region": "usw2",
+    "DataCenter": "dl1",
+    "EnvironmentId": null,
+    "Continent": null,
+    "RoutingAttributes": {
+        "Region": "usw2",
+        "DataCenter": "dl1"
+    },
+    "CurrentlyActiveDataGroup_Primary": "datagroup1_primary",
+    "CurrentlyActiveDataGroup_Secondary": "datagroup1_secondary"
+}
