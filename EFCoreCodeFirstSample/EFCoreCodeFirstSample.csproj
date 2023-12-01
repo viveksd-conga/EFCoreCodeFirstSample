@@ -10,18 +10,22 @@
     <PackageReference Include="AWSSDK.SimpleSystemsManagement" Version="3.7.202.7" />
     <PackageReference Include="AWSSDK.SQS" Version="3.7.200.67" />
     <PackageReference Include="Microsoft.AspNetCore.OData" Version="8.2.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.12">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.11" />
     <PackageReference Include="Npgsql" Version="7.0.6" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.12" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.12" />
+	<PackageReference Include="RulesEngine" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <Folder Include="ProductRules\" />
   </ItemGroup>
 
 </Project>

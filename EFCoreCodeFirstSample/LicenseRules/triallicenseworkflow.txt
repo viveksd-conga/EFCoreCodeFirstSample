@@ -1,0 +1,51 @@
+{
+  "WorkflowName": "triallicenseworkflowsample",
+  "WorkflowsToInject": null,
+  "RuleExpressionType": 0,
+  "GlobalParams": null,
+  "Rules": [
+    {
+      "RuleName": "IsTrialLicense",
+      "Properties": null,
+      "Operator": "OrElse",
+      "ErrorMessage": "Rule IsTrialLicense failed.",
+      "Enabled": true,
+      "RuleExpressionType": 0,
+      "WorkflowsToInject": null,
+      "Rules": [
+        {
+          "RuleName": "LicenseInfoNotProvided",
+          "Properties": null,
+          "Operator": null,
+          "ErrorMessage": "LicenseInfoNotProvided rule failed.",
+          "Enabled": true,
+          "RuleExpressionType": 0,
+          "WorkflowsToInject": null,
+          "Rules": null,
+          "LocalParams": null,
+          "Expression": "inputLicenses == null",
+          "Actions": null,
+          "SuccessEvent": null
+        },
+        {
+          "RuleName": "IsAllTrial",
+          "Properties": null,
+          "Operator": null,
+          "ErrorMessage": "IsAllTrial rule failed.",
+          "Enabled": true,
+          "RuleExpressionType": 0,
+          "WorkflowsToInject": null,
+          "Rules": null,
+          "LocalParams": null,
+          "Expression": "inputLicenses.All(i=>i.Type.ToLower() == \"trial\")",
+          "Actions": null,
+          "SuccessEvent": null
+        }
+      ],
+      "LocalParams": null,
+      "Expression": null,
+      "Actions": null,
+      "SuccessEvent": "true"
+    }
+  ]
+}

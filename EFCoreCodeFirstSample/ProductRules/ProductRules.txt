@@ -1,0 +1,47 @@
+{
+  "WorkflowName": "productworkflow",
+  "GlobalParams": [
+    {
+      "Name": "InputProductIsNotEmpty",
+      "Expression": "!string.IsNullOrWhiteSpace(inputProduct)"
+    },
+    {
+      "Name": "InputProductInLowerCase",
+      "Expression": "inputProduct.ToLower()"
+    }
+  ],
+  "Rules": [
+    {
+      "RuleName": "ComposerProduct",
+      "SuccessEvent": "Composer",
+      "ErrorMessage": "ComposerProduct Rule failed.",
+      "ErrorType": "Error",
+      "RuleExpressionType": 0,
+      "Expression": "InputProductIsNotEmpty && InputProductInLowerCase == \"composer\""
+    },
+    {
+      "RuleName": "SignProduct",
+      "SuccessEvent": "Sign",
+      "ErrorMessage": "SignProduct Rule failed.",
+      "ErrorType": "Error",
+      "RuleExpressionType": 0,
+      "Expression": "InputProductIsNotEmpty && InputProductInLowerCase == \"sign\""
+    },
+    {
+      "RuleName": "CPQProduct",
+      "SuccessEvent": "CPQ",
+      "ErrorMessage": "CPQProduct Rule failed.",
+      "ErrorType": "Error",
+      "RuleExpressionType": 0,
+      "Expression": "InputProductIsNotEmpty && InputProductInLowerCase == \"cpq\""
+    },
+    {
+      "RuleName": "CLMProduct",
+      "SuccessEvent": "CLM",
+      "ErrorMessage": "CLMProduct Rule failed.",
+      "ErrorType": "Error",
+      "RuleExpressionType": 0,
+      "Expression": "InputProductIsNotEmpty && InputProductInLowerCase == \"clm\""
+    }
+  ]
+}

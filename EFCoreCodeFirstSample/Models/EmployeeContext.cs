@@ -17,6 +17,10 @@ namespace EFCoreCodeFirstSample.Models
         public DbSet<Customer> Customers { get; set; }
         public DbSet<CustomerMetaData> CustomersMetaData { get; set; }
 
+        //public DbSet<LicenseRule> LicenseRules { get; set; }
+
+        public DbSet<LicenseRuleV2> LicenseRules { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             

@@ -1,0 +1,112 @@
+[
+  {
+    "WorkflowName": "triallicenseworkflow",
+    "Rules": [
+      {
+        "RuleName": "IsTrialLicense",
+        "SuccessEvent": "true",
+        "ErrorMessage": "Rule IsTrialLicense failed.",
+        "ErrorType": "Error",
+        "RuleExpressionType": 0,
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "LicenseInfoNotProvided",
+            "ErrorMessage": "LicenseInfoNotProvided rule failed.",
+            "ErrorType": "Error",
+            "RuleExpressionType": 0,
+            "Expression": "inputLicenses == null"
+          },
+          {
+            "RuleName": "IsAllTrial",
+            "ErrorMessage": "IsAllTrial rule failed.",
+            "ErrorType": "Error",
+            "RuleExpressionType": 0,
+            "Expression": "inputLicenses.All(i=>i.Type.ToLower() == \"trial\")"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "WorkflowName": "sharedstoragelicenseworkflow",
+    "Rules": [
+      {
+        "RuleName": "IsSharedStorageLicense",
+        "SuccessEvent": "true",
+        "ErrorMessage": "Rule IsSharedStorageLicense failed.",
+        "ErrorType": "Error",
+        "RuleExpressionType": 0,
+        "Expression": "!inputLicenses.Any(i=> (new []{\"cpq\", \"clm\"}).Contains(i.Name.ToLower()))"
+      }
+    ]
+  },
+  {
+    "WorkflowName": "coreappslicenseworkflow",
+    "Rules": [
+      {
+        "RuleName": "CoreAppsLicense",
+        "SuccessEvent": "true",
+        "ErrorMessage": "Rule CoreAppsLicense failed.",
+        "ErrorType": "Error",
+        "RuleExpressionType": 0,
+        "Operator": "And",
+        "Rules": [
+          {
+            "RuleName": "IsAnyComposerOrSignLicense",
+            "ErrorMessage": "IsAnyComposerOrSignLicense rule failed.",
+            "ErrorType": "Error",
+            "RuleExpressionType": 0,
+            "Expression": "inputLicenses.Any(i=> (new []{\"composer\", \"sign\"}).Contains(i.Name.ToLower()))"
+          },
+          {
+            "RuleName": "IsAllNotCLMCPQLicense",
+            "ErrorMessage": "IsAllNotCLMCPQLicense rule failed.",
+            "ErrorType": "Error",
+            "RuleExpressionType": 0,
+            "Expression": "inputLicenses.All(i=> (new []{\"cpq\", \"clm\"}).Contains(i.Name.ToLower()) == false)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "WorkflowName": "datasyncworkflow",
+    "Rules": [
+      {
+        "RuleName": "DataSyncLicense",
+        "SuccessEvent": "true",
+        "ErrorMessage": "Rule DataSyncLicense failed.",
+        "ErrorType": "Error",
+        "RuleExpressionType": 0,
+        "Expression": "inputLicenses.Any(i=> (new []{\"cpq\", \"clm\"}).Contains(i.Name.ToLower()) && i.Type.ToLower() != \"trial\")"
+      }
+    ]
+  },
+  {
+    "WorkflowName": "revenueonboardingworkflow",
+    "Rules": [
+      {
+        "RuleName": "RevenueOnboardingLicense",
+        "SuccessEvent": "true",
+        "ErrorMessage": "Rule RevenueOnboardingLicense failed.",
+        "ErrorType": "Error",
+        "RuleExpressionType": 0,
+        "Expression": "inputLicenses.Any(i=> i.Name.ToLower() == \"cpq\")"
+      }
+    ]
+  },
+  {
+    "WorkflowName": "platformopensearchonboardingworkflow",
+    "Rules": [
+      {
+        "RuleName": "PlatformSearchOnboardingLicense",
+        "SuccessEvent": "true",
+        "ErrorMessage": "Rule PlatformSearchOnboardingLicense failed.",
+        "ErrorType": "Error",
+        "RuleExpressionType": 0,
+        "Expression": "1 == 1"
+      }
+    ]
+  }
+]

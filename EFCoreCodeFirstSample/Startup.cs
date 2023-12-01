@@ -1,7 +1,9 @@
 using EFCoreCodeFirstSample.AWS;
+using EFCoreCodeFirstSample.Mapping;
 using EFCoreCodeFirstSample.Mapping.S3Model;
 using EFCoreCodeFirstSample.Models;
 using EFCoreCodeFirstSample.Models.DataManager;
+using EFCoreCodeFirstSample.Models.ModelBuilderExtension;
 using EFCoreCodeFirstSample.Models.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OData.Edm;
 using Microsoft.OData.ModelBuilder;
 using System;
+using System.Collections.Generic;
 
 namespace EFCoreCodeFirstSample
 {
@@ -33,14 +36,19 @@ namespace EFCoreCodeFirstSample
             services.AddScoped<IDataRepositoryCustomerMetaData<CustomerMetaData>, CustomerMetaDataManager>();
             services.AddScoped<IDataRepositoryLicense<License>, LicenseManager>();
             services.AddScoped<IDataRepository<Employee>, EmployeeManager>();
+            services.AddScoped<IDataRepositoryLicenseRule<LicenseRuleV2>, LicenseRulesManager>();
+            services.AddScoped<IDataRepositoryProductRule<ProductRule>, ProductRulesManager>();
             services.AddControllers().AddOData(options =>
                     options.Select().Filter().Count()
                     .OrderBy().Expand()
                     .AddRouteComponents("odata", GetModal()));
             services.AddScoped<ILocalTenantOnboarding, LocalTenantOnboarding>();
             services.AddScoped<ILicense_S3, License_S3>();
+            services.AddScoped<ILicenseRuleMapping, LicenseRuleMapping>();
+            services.AddScoped<IProductRuleMapping, ProductRuleMapping>();
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
+
 
         public static IEdmModel GetModal()
         {

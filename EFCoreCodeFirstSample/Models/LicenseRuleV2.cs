@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace EFCoreCodeFirstSample.Models
 {
-    public class LicenseRule
+    public class LicenseRuleV2
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -15,4 +13,3 @@ namespace EFCoreCodeFirstSample.Models
         public RootLicenseWorkFlow LicenseWorkFlowContent { get; set; }
     }
 }
-

@@ -1,5 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using EFCoreCodeFirstSample.Mapping;
+using EFCoreCodeFirstSample.Models;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
+using System.Collections.Generic;
+using System;
 
 #nullable disable
 

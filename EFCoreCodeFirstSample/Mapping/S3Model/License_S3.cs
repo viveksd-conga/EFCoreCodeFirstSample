@@ -78,13 +78,7 @@ namespace EFCoreCodeFirstSample.Mapping.S3Model
                 return licenseList;
             }
             else
-            {
-                License license = new License();
-                license.Id = Guid.NewGuid();
-                license.AccountId = accountInfo.ID;
-                license.AccountName = accountInfo.Name;
-                license.OrganizationFriendlyId = organizationFriendlyId;
-                licenseList.Add(license);
+            { 
                 return licenseList;
             }
         }

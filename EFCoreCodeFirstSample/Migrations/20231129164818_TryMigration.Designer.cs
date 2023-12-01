@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EFCoreCodeFirstSample.Migrations
 {
     [DbContext(typeof(EmployeeContext))]
-    [Migration("20231108135933_CustomerMetaData2")]
-    partial class CustomerMetaData2
+    [Migration("20231129164818_TryMigration")]
+    partial class TryMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -100,7 +100,7 @@ namespace EFCoreCodeFirstSample.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("EmployeeId"));
 
                     b.Property<DateTime?>("DateOfBirth")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Email")
                         .HasColumnType("text");
@@ -135,6 +135,20 @@ namespace EFCoreCodeFirstSample.Migrations
                             LastName = "Kirsten",
                             PhoneNumber = "111-222-3333"
                         });
+                });
+
+            modelBuilder.Entity("EFCoreCodeFirstSample.Models.LicenseRule", b =>
+                {
+                    b.Property<string>("LicenseWorkFlow")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("text");
+
+                    b.Property<RootLicenseWorkFlow>("LicenseWorkFlowContent")
+                        .HasColumnType("jsonb");
+
+                    b.HasKey("LicenseWorkFlow");
+
+                    b.ToTable("LicenseRules");
                 });
 #pragma warning restore 612, 618
         }
