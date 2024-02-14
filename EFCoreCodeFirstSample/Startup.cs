@@ -1,10 +1,12 @@
 using EFCoreCodeFirstSample.AWS;
+using EFCoreCodeFirstSample.HostedService;
 using EFCoreCodeFirstSample.Mapping;
 using EFCoreCodeFirstSample.Mapping.S3Model;
 using EFCoreCodeFirstSample.Models;
 using EFCoreCodeFirstSample.Models.DataManager;
 using EFCoreCodeFirstSample.Models.ModelBuilderExtension;
 using EFCoreCodeFirstSample.Models.Repository;
+using EFCoreCodeFirstSample.S3CRUDOperation.Implementation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.OData;
@@ -31,7 +33,7 @@ namespace EFCoreCodeFirstSample
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<EmployeeContext>(opts => opts.UseNpgsql(Configuration["ConnectionString:EmployeeDB"]));
+            services.AddDbContext<EmployeeContext>(opts => opts.UseNpgsql(Configuration["ConnectionString:DatabaseConnection"]));
             services.AddDbContext<LicenseContext>(opts => opts.UseNpgsql(Configuration["ConnectionString:EmployeeDB"]));
             services.AddScoped<IDataRepositoryCustomerMetaData<CustomerMetaData>, CustomerMetaDataManager>();
             services.AddScoped<IDataRepositoryLicense<License>, LicenseManager>();
@@ -42,8 +44,10 @@ namespace EFCoreCodeFirstSample
                     options.Select().Filter().Count()
                     .OrderBy().Expand()
                     .AddRouteComponents("odata", GetModal()));
-            services.AddScoped<ILocalTenantOnboarding, LocalTenantOnboarding>();
+            services.AddSingleton<IAWSConfiguration, AWSConfiguration>();
             services.AddScoped<ILicense_S3, License_S3>();
+            services.AddSingleton<ObjectRemovalPOC>();
+            services.AddHostedService<ObjectRemovalService>();
             services.AddScoped<ILicenseRuleMapping, LicenseRuleMapping>();
             services.AddScoped<IProductRuleMapping, ProductRuleMapping>();
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);

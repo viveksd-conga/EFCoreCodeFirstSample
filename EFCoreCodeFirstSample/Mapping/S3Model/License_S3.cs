@@ -17,17 +17,17 @@ namespace EFCoreCodeFirstSample.Mapping.S3Model
     public class License_S3 : ILicense_S3
     {
 
-        private readonly ILocalTenantOnboarding localTenantOnboarding;
+        private readonly IAWSConfiguration awsConfiguration;
         //private readonly IDataRepositoryLicense<License> dataRepositoryLicense;
-        public License_S3(ILocalTenantOnboarding localTenantOnboarding) 
+        public License_S3(IAWSConfiguration awsConfiguration) 
         {
-            this.localTenantOnboarding = localTenantOnboarding;
+            this.awsConfiguration = awsConfiguration;
         }
         public async Task<ListObjectsV2Response> GetFilesAsync()
         {
             var globalBucketName = Constants.globalBucketName;
 
-            var amazonS3Client = localTenantOnboarding.SetClient();
+            var amazonS3Client = awsConfiguration.SetClient();
 
             var request = new ListObjectsV2Request()
             {
@@ -42,7 +42,7 @@ namespace EFCoreCodeFirstSample.Mapping.S3Model
         public async Task<string> GetFileAsync(string key)
         {
             var globalBucketName = Constants.globalBucketName;
-            var amazonS3Client = localTenantOnboarding.SetClient();
+            var amazonS3Client = awsConfiguration.SetClient();
             var response = await amazonS3Client.GetObjectAsync(globalBucketName, key);
             using var reader = new StreamReader(response.ResponseStream);
             var fileContents = await reader.ReadToEndAsync();

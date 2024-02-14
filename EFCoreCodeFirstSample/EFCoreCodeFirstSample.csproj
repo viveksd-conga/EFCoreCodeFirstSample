@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <Folder Include="ProductRules\" />
+    <Folder Include="S3CRUDOperation\Interface\" />
   </ItemGroup>
 
 </Project>

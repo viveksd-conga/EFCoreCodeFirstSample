@@ -2,7 +2,7 @@
 
 namespace EFCoreCodeFirstSample.AWS
 {
-    public interface ILocalTenantOnboarding
+    public interface IAWSConfiguration
     {
         public AmazonS3Client SetClient();
     }

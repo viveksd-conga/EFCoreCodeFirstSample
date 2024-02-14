@@ -30,7 +30,7 @@ namespace EFCoreCodeFirstSample.Models.ModelBuilderExtension
         }
         private static List<License> GetLicenses()
         {
-            ILocalTenantOnboarding localTenantOnboarding = new LocalTenantOnboarding();
+            IAWSConfiguration localTenantOnboarding = new AWSConfiguration();
             License_S3 license_S3 = new License_S3(localTenantOnboarding);
             List<License> licenses = license_S3.GetLicensesAsync().Result;
             if (licenses.Count == 0)

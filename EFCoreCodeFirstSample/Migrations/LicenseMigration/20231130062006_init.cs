@@ -119,8 +119,8 @@ namespace EFCoreCodeFirstSample.Migrations.LicenseMigration
 
         private static List<EFCoreCodeFirstSample.Models.License> GetLicenses()
         {
-            ILocalTenantOnboarding localTenantOnboarding = new LocalTenantOnboarding();
-            License_S3 license_S3 = new License_S3(localTenantOnboarding);
+            IAWSConfiguration awsConfiguration = new AWSConfiguration();
+            License_S3 license_S3 = new License_S3(awsConfiguration);
             List<EFCoreCodeFirstSample.Models.License> licenses = license_S3.GetLicensesAsync().Result;
             if (licenses.Count == 0)
             {

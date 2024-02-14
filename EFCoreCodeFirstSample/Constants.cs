@@ -11,5 +11,10 @@
         public const string licenseRulesPath = @"C:/Users/viveksd/Downloads/EFCoreCodeFirstSample/EFCoreCodeFirstSample/LicenseRules/";
         public const string productRulesPath = @"C:/Users/viveksd/Downloads/EFCoreCodeFirstSample/EFCoreCodeFirstSample/ProductRules/";
         public const string productRule = "onboarding-productrulesconfigurations/";
+        public const string toBeDeleted = "toBeDeleted/";
+        public const string rootFolder = "rootFolder/";
+        public const string levelOneFolder = "rootFolder/level1_1/";
+        public const string levelTwoFolder = "rootFolder/level1_2/level2_1/";
+        public const string pocBucket = "poc1";
     }
 }

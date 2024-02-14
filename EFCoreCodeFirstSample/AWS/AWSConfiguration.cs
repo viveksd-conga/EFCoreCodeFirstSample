@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 
 namespace EFCoreCodeFirstSample.AWS
 {
-    public class LocalTenantOnboarding : ILocalTenantOnboarding
+    public class AWSConfiguration : IAWSConfiguration
     {
         public AmazonS3Client SetClient()
         {
