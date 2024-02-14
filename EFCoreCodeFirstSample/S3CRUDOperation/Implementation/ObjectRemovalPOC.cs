@@ -99,15 +99,15 @@ namespace EFCoreCodeFirstSample.S3CRUDOperation.Implementation
                 var deleteFolderRequest = new DeleteObjectRequest
                 {
                     BucketName = bucketName,
-                    Key = Constants.toBeDeleted
+                    Key = prefix
                 };
 
                 await s3Client.DeleteObjectAsync(deleteFolderRequest);
-                Console.WriteLine($"Deleted Folder Prefix : {Constants.toBeDeleted}");
+                Console.WriteLine($"Deleted Folder Prefix : {prefix}");
             }
             else
             {
-                Console.WriteLine($"Folder Prefix {Constants.toBeDeleted} still has keys associated with it. Hence the folder cannot be deleted");
+                Console.WriteLine($"Folder Prefix {prefix} still has keys associated with it. Hence the folder cannot be deleted");
             }
 
             Console.WriteLine("All the Object Keys deleted successfully");
