@@ -46,6 +46,8 @@ namespace EFCoreCodeFirstSample
                     .AddRouteComponents("odata", GetModal()));
             services.AddSingleton<IAWSConfiguration, AWSConfiguration>();
             services.AddScoped<ILicense_S3, License_S3>();
+
+            // Registration of ObjectRemoval Dependencies
             services.AddSingleton<ObjectRemovalPOC>();
             services.AddHostedService<ObjectRemovalService>();
             services.AddScoped<ILicenseRuleMapping, LicenseRuleMapping>();
