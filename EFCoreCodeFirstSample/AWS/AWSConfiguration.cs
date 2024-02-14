@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 
 namespace EFCoreCodeFirstSample.AWS
 {
-    // AWS S3 Browser access Configuration
+    // AWS S3 Browser access Configuration 
     public class AWSConfiguration : IAWSConfiguration
     {
         public AmazonS3Client SetClient()

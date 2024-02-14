@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EFCoreCodeFirstSample.S3CRUDOperation.Implementation
 {
-    // A POC for removal of Objects and Associated Keys in S3
+    // A POC for removal of Objects and Associated Keys in S3 
     public class ObjectRemovalPOC
     {
         private readonly IAWSConfiguration awsConfiguration;
