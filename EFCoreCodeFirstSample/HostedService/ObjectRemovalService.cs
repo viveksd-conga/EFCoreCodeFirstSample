@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EFCoreCodeFirstSample.HostedService
 {
-    // An Hoisted Service for the ObjectRemovalPOC
+    // An Hoisted Service for the ObjectRemovalPOC 
     public class ObjectRemovalService : IHostedService
     {
         private readonly ObjectRemovalPOC _objectRemovalPOC;
